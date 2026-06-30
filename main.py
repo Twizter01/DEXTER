@@ -33,7 +33,6 @@ from poke_exceptions import PokemonNotFound
 from cli.commands import *
 
 
-
 def command_dispatch_helper(user_command: str) -> None:
     command = COMMAND_TABLE.get(user_command)
 
@@ -53,12 +52,10 @@ def command_dispatch_helper(user_command: str) -> None:
     except Exception as exc:
         console.print(Text(f"An unexpected error occurred: {exc}"), style="red")
 
-
 def main() -> None:
 
     intro_screen(INTRO_TEXT)
     
-
     while True:
         user_command = input(">").strip().lower()
         
